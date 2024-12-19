@@ -1,0 +1,164 @@
+//function sorting numbers from bigger to smaller
+function sortDescending(arr) {
+  return arr.sort(function(a, b) {
+    return b - a;
+  });
+}
+console.log(sortDescending([5, 1, 8, 3]));
+
+// function checking 2 arrays and prints the same numbers from function commonValues(arr1, arr2) {
+  function commonValues(arr1, arr2) {
+  const result = [];
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j] && result.indexOf(arr1[i]) === -1) {
+        result.push(arr1[i]);
+      }
+    }
+  }
+  return result;
+}
+console.log(commonValues([1, 2, 3, 4], [2, 4, 6, 2]));
+
+//function checks matrix values and prints function matrixAverage(matrix) {
+  function matrixAverage(matrix) {
+  let total = 0;
+  let count = 0;
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      total += matrix[i][j];
+      count++;
+    }
+  }
+  return total / count;
+}
+console.log(matrixAverage([[1, 2, 3], [4, 5, 6]]));
+
+
+//function checks occurrences of number and removes it
+function countAndRemove(arr, num) {
+  let count = 0;
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] === num) {
+      arr.pop();
+      count++;
+    }
+  }
+  return count;
+}
+const numbers = [1, 2, 3, 2, 4, 2];
+console.log(countAndRemove(numbers, 2)); 
+console.log(numbers);
+
+// function checks if string is longer than 5 chars
+function isLongerThanFive(str) {
+  return str.length > 5;
+}
+console.log(isLongerThanFive("hello")); //  false
+console.log(isLongerThanFive("welcome")); // true
+
+//function checks if the first and last chars are equal
+function isFirstLastSame(str) {
+  if (str[0] === str[str.length - 1]) {
+    return "Same characters";
+  } else {
+    return "Different characters";
+  }
+}
+console.log(isFirstLastSame("hello")); // false
+console.log(isFirstLastSame("radar")); // true
+
+//function checks if last char is caps  
+function isLastUppercase(str) {
+  if (str[str.length - 1] === str[str.length - 1].toUpperCase()) {
+    return "True";
+  } else {
+    return "False";
+  }
+}
+console.log(isLastUppercase("helloA")); // Output: "True"
+console.log(isLastUppercase("hello")); // Output: "False"
+
+//function checks divisible by 3 and prints in vale and its index
+function divisibleByThree(arr) {
+  let found = false;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 3 === 0) {
+      console.log("Index: " + i + ", Value: " + arr[i]);
+      found = true;
+    }
+  }
+  if (!found) {
+    console.log("The array is not divisible by 3");
+  }
+}
+divisibleByThree([2, 4, 9, 12, 8]); 
+
+
+//function identify upper and lower case 
+function upperLowerMap(arr) {
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === arr[i].toUpperCase()) {
+      result.push("UC");
+    } else {
+      result.push("LC");
+    }
+  }
+  return result;
+}
+console.log(upperLowerMap(['A', 'b', 'C', 'd']));
+
+
+// function checks even indexes of chars in array and replace char with index
+function replaceEvenIndex(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (i % 2 === 0) {
+      arr[i] = i;
+    }
+  }
+  return arr;
+}
+console.log(replaceEvenIndex(['a', 'b', 'c', 'd']));
+
+
+//function prints numbers above 18
+function filterAdults(ages) {
+  const result = [];
+  for (let i = 0; i < ages.length; i++) {
+    if (ages[i] > 18) {
+      result.push(ages[i]);
+    }
+  }
+  return result;
+}
+console.log(filterAdults([12, 19, 17, 21]));
+
+
+//function removes the 3rd index
+function removeIndexThree(arr) {
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (i !== 3) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+console.log(removeIndexThree([2, 4, 1, 2, 7, 2, 8]));
+
+
+//function pushes names frim its local array into global array
+const names = [];
+function addName(name) {
+  names.push(name);
+}
+addName("hamodi");
+console.log(names);
+
+
+//function merges 2 arrays into 1
+function mergeArrays(arr1, arr2) {
+  return arr1.concat(arr2);
+}
+console.log(mergeArrays(["one", "two"], ["three", "four"]));
